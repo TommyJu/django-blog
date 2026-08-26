@@ -1,3 +1,6 @@
 # Django Blog
-Learning the basics of Django by building a simple blog!
-[Intro to Django learning resource](https://tutorial.djangogirls.org/en/)
+
+Learning the basics of Django by building a simple blog!  
+  
+Learning resource: https://tutorial.djangogirls.org/en/  
+Deployed website: https://www.pythonanywhere.com
