@@ -18,19 +18,32 @@
     <!-- Django template syntax is used to serve static assets which location may vary during production -->
     <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
   </head>
-  <header class="page-header">
-    <div class="container">
-      {% if user.is_authenticated %}
+  <body>
+    <header class="page-header">
+      <div class="container">
+        {% if user.is_authenticated %}
+        <form method="post" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <button type="submit" class="top-menu">
+            {% include './icons/box-arrow-right.svg' %}
+          </button>
+        </form>
         <a href="{% url 'post_new' %}" class="top-menu">
           {% include './icons/file-earmark-plus.svg' %}
         </a>
-        <a href="{% url 'post_draft_list' %}" class="top-menu">{% include './icons/pencil-square.svg'%}</a>
-      {% endif %}
-      <h1><a href="/">Tommy's Blog</a></h1>
-    </div>
-  </header>
-  <body>
-    <main class="container">
+        <a href="{% url 'post_draft_list' %}" class="top-menu"
+          >{% include './icons/pencil-square.svg'%}</a
+        >
+        <p class="top-menu">Hello {{ user.username }}</p>
+        {% else %}
+        <a href="{% url 'login' %}" class="top-menu"
+          >{% include './icons/lock-fill.svg' %}</a
+        >
+        {% endif %}
+        <h1><a href="/">Tommy's Blog</a></h1>
+      </div>
+    </header>
+    <main class="content container">
       <div class="row">
         <div class="col">{% block content %} {% endblock %}</div>
       </div>

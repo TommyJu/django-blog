@@ -41,6 +41,16 @@ h4 {
     float: right;
     font-size: 26pt;
     margin-right: 20px;
+    font-family: 'Lobster', cursive;
+
+}
+
+/* Removes button default styling */
+.top-menu {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
 
 .post {
@@ -57,15 +67,8 @@ h4 {
     float: right;
 }
 
-.btn-secondary,
-.btn-secondary:visited {
-    color: #C25100;
-    background: none;
-    border-color: #C25100;
-    margin-left: 15px;
-}
-
-.btn-secondary:hover {
+.btn-secondary {
     color: #FFFFFF;
     background-color: #C25100;
+    border: none;
 }
